@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { auth, googleProvider } from './firebase';
 import { signInWithPopup } from 'firebase/auth';
 import axios from 'axios';
+import LatexRenderer from './LatexRenderer';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -126,7 +127,7 @@ function App() {
           {response && (
             <div style={{ marginTop: '20px', background: '#f4f4f4', padding: '15px', borderRadius: '8px' }}>
               <h3>Respuesta:</h3>
-              <p style={{ whiteSpace: 'pre-wrap', lineHeight: '1.5' }}>{response}</p>
+              <LatexRenderer content={response} />
             </div>
           )}
 
